@@ -1,0 +1,20 @@
+Tue Nov 01 01:10:19 NZDT 2022 : Apache Derby Network Server - 10.14.2.0 - (1828579) started and ready to accept connections on port 1527
+----------------------------------------------------------------
+Tue Nov 01 01:10:19 NZDT 2022:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-0184-2df3-214f-000039a995ae 
+on database directory C:\Users\dvaid\OneDrive\Documents\NetBeansProjects\ProjectTwo_PDC\HotelBooking with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@73d16e93 
+Loaded from file:/C:/Users/dvaid/OneDrive/Documents/db-derby-10.14.2.0-bin/lib/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=17.0.2+8-LTS-86
+user.dir=C:\Users\dvaid\OneDrive\Documents\db-derby-10.14.2.0-bin
+os.name=Windows 11
+os.arch=amd64
+os.version=10.0
+derby.system.home=C:\Users\dvaid\OneDrive\Documents\NetBeansProjects\ProjectTwo_PDC
+Database Class Loader started - derby.database.classpath=''
+----------------------------------------------------------------
+Tue Nov 01 01:13:03 NZDT 2022: Shutting down Derby engine
+----------------------------------------------------------------
+Tue Nov 01 01:13:03 NZDT 2022:
+Shutting down instance a816c00e-0184-2df3-214f-000039a995ae on database directory C:\Users\dvaid\OneDrive\Documents\NetBeansProjects\ProjectTwo_PDC\HotelBooking with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@73d16e93 
+----------------------------------------------------------------
