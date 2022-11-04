@@ -174,22 +174,22 @@ public class MainPage extends javax.swing.JFrame {
 
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
         setVisible(false);
-        Login l = new Login();
+        new Login().setVisible(true);
     }//GEN-LAST:event_loginButtonActionPerformed
 
     private void signupButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signupButtonActionPerformed
         setVisible(false);
-        Signup s = new Signup();
+        new Signup().setVisible(true);
     }//GEN-LAST:event_signupButtonActionPerformed
 
     private void bookingButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bookingButtonActionPerformed
         setVisible(false);
-        Login l = new Login();
+        new Login().setVisible(true);
     }//GEN-LAST:event_bookingButtonActionPerformed
 
     private void aboutContactButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aboutContactButtonActionPerformed
         setVisible(false);
-        AboutUsContact a = new AboutUsContact();
+        new AboutUsContact().setVisible(true);
     }//GEN-LAST:event_aboutContactButtonActionPerformed
 
     /**

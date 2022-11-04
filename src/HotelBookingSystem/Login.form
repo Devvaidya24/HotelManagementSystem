@@ -110,11 +110,11 @@
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
-                          <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                          <Component id="LoginToDashboard" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jButton2" min="-2" pref="78" max="-2" attributes="0"/>
+                          <Component id="signupPage" min="-2" pref="78" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jButton3" pref="139" max="32767" attributes="0"/>
+                          <Component id="forgotPasswordPage" pref="139" max="32767" attributes="0"/>
                       </Group>
                       <Component id="jPasswordField1" min="-2" pref="300" max="-2" attributes="0"/>
                       <Component id="jTextField1" min="-2" pref="300" max="-2" attributes="0"/>
@@ -149,9 +149,9 @@
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jButton3" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="LoginToDashboard" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="signupPage" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="forgotPasswordPage" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
@@ -218,29 +218,38 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton1">
+        <Component class="javax.swing.JButton" name="LoginToDashboard">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Times New Roman" size="12" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Login"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="LoginToDashboardActionPerformed"/>
+          </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton2">
+        <Component class="javax.swing.JButton" name="signupPage">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Times New Roman" size="12" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Signup"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="signupPageActionPerformed"/>
+          </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton3">
+        <Component class="javax.swing.JButton" name="forgotPasswordPage">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Times New Roman" size="12" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Forgot Password?"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="forgotPasswordPageActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel9">
           <Properties>

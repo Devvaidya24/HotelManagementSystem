@@ -1,12 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package HotelBookingSystem;
 
 /**
  *
- * @author dvaid
+ * @author Dev Vaidya
  */
 public class AboutUsContact extends javax.swing.JFrame {
 

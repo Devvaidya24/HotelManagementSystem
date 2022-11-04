@@ -1,12 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package HotelBookingSystem;
 
 /**
  *
- * @author dvaid
+ * @author Dev Vaidya
  */
 public class Login extends javax.swing.JFrame {
 
@@ -33,9 +29,9 @@ public class Login extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jPasswordField1 = new javax.swing.JPasswordField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        LoginToDashboard = new javax.swing.JButton();
+        signupPage = new javax.swing.JButton();
+        forgotPasswordPage = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
@@ -95,14 +91,29 @@ public class Login extends javax.swing.JFrame {
 
         jPasswordField1.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
 
-        jButton1.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        jButton1.setText("Login");
+        LoginToDashboard.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        LoginToDashboard.setText("Login");
+        LoginToDashboard.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LoginToDashboardActionPerformed(evt);
+            }
+        });
 
-        jButton2.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        jButton2.setText("Signup");
+        signupPage.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        signupPage.setText("Signup");
+        signupPage.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                signupPageActionPerformed(evt);
+            }
+        });
 
-        jButton3.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        jButton3.setText("Forgot Password?");
+        forgotPasswordPage.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        forgotPasswordPage.setText("Forgot Password?");
+        forgotPasswordPage.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                forgotPasswordPageActionPerformed(evt);
+            }
+        });
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SystemImages/padlock.png"))); // NOI18N
 
@@ -118,11 +129,11 @@ public class Login extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jButton1)
+                        .addComponent(LoginToDashboard)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(signupPage, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, 139, Short.MAX_VALUE))
+                        .addComponent(forgotPasswordPage, javax.swing.GroupLayout.DEFAULT_SIZE, 139, Short.MAX_VALUE))
                     .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(12, 12, 12)
@@ -150,9 +161,9 @@ public class Login extends javax.swing.JFrame {
                             .addComponent(jLabel4))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton1)
-                            .addComponent(jButton2)
-                            .addComponent(jButton3)))
+                            .addComponent(LoginToDashboard)
+                            .addComponent(signupPage)
+                            .addComponent(forgotPasswordPage)))
                     .addComponent(jLabel9))
                 .addContainerGap(68, Short.MAX_VALUE))
         );
@@ -170,6 +181,20 @@ public class Login extends javax.swing.JFrame {
         setVisible(false);
         System.exit(0);
     }//GEN-LAST:event_ExitActionPerformed
+
+    private void LoginToDashboardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginToDashboardActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_LoginToDashboardActionPerformed
+
+    private void signupPageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signupPageActionPerformed
+        setVisible(false);
+        new Signup().setVisible(true);
+    }//GEN-LAST:event_signupPageActionPerformed
+
+    private void forgotPasswordPageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_forgotPasswordPageActionPerformed
+        setVisible(false);
+        new ForgotPassword().setVisible(true);
+    }//GEN-LAST:event_forgotPasswordPageActionPerformed
 
     /**
      * @param args the command line arguments
@@ -208,9 +233,8 @@ public class Login extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Exit;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton LoginToDashboard;
+    private javax.swing.JButton forgotPasswordPage;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -220,5 +244,6 @@ public class Login extends javax.swing.JFrame {
     private static final javax.swing.JPanel jPanel2 = new javax.swing.JPanel();
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JButton signupPage;
     // End of variables declaration//GEN-END:variables
 }
