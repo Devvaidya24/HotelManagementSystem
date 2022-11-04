@@ -1,16 +1,19 @@
 package HotelBookingSystem;
 
+import DataBaseConnection.ConnectionDB;
+import java.sql.*;
+
 /**
  *
  * @author Dev Vaidya
  */
 public class Signup extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Signup
-     */
+    Connection con = null;
+    
     public Signup() {
         initComponents();
+        con = ConnectionDB.connectionDataBase();
     }
 
     /**
