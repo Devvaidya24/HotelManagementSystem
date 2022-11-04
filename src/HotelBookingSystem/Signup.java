@@ -13,7 +13,6 @@ public class Signup extends javax.swing.JFrame {
     
     public Signup() {
         initComponents();
-        con = ConnectionDB.connectionDataBase();
     }
 
     /**
