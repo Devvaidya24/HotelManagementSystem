@@ -1,7 +1,6 @@
 package HotelBookingSystem;
 
 import java.sql.*;
-import DataBaseConnection.ConnectionDB;
 
 /**
  *
