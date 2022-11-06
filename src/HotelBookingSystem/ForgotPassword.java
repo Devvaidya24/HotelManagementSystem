@@ -1,7 +1,9 @@
 package HotelBookingSystem;
 
+import javax.swing.JOptionPane;
+
 /**
- *
+ * @studentID 19087471
  * @author Dev Vaidya
  */
 public class ForgotPassword extends javax.swing.JFrame {
@@ -164,8 +166,10 @@ public class ForgotPassword extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void ExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitActionPerformed
-        setVisible(false);
-        System.exit(0);
+        int exit = JOptionPane.showConfirmDialog(null, "Would You Like to Close This Program?", "Select", JOptionPane.YES_NO_CANCEL_OPTION);
+        if (exit == 0) {
+            System.exit(0);
+        }
     }//GEN-LAST:event_ExitActionPerformed
 
     /**
@@ -197,6 +201,7 @@ public class ForgotPassword extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new ForgotPassword().setVisible(true);
             }

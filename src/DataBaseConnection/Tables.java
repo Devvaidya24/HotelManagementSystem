@@ -4,7 +4,7 @@ import java.sql.*;
 import javax.swing.JOptionPane;
 
 /**
- *
+ * @studentID 19087471
  * @author Dev Vaidya
  */
 public class Tables {
@@ -16,10 +16,10 @@ public class Tables {
         try {
             conn = ConnectionDB.getConnection();
             state = conn.createStatement();
-            state.executeUpdate("create table users(name varchar(200),email varchar(200),password varchar(50),gender varchar(500),phoneNumber varchar(200),address varchar(200),status varchar(200))");
+            state.executeUpdate("create table HotelBookingCustomers(fullname varchar(200),emailaddress varchar(200),password varchar(50),gender varchar(500),phonenumber varchar(200),address varchar(200),status varchar(200))");
             JOptionPane.showMessageDialog(null, "Created Table Successfully!!!");        
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e);
+            JOptionPane.showMessageDialog(null, "    Could Not Create Table\n      As It Already Exists!!!");
         } finally {
             try {
                 conn.close();
