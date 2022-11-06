@@ -23,8 +23,15 @@ public final class ConnectionDB {
         System.out.println(connDB);
     }
 
-    public Connection getConnection() {
-        return this.conn;
+    public static Connection getConnection() {
+        
+        try {
+            Class.forName("org.apache.derby.jdbc.EmbeddedDriver");
+            Connection conn = DriverManager.getConnection(URL, USER_NAME, PASSWORD);
+            return conn;
+        } catch (Exception e) {
+            return null;
+        }
     }
 
     public void establishConnection() {
