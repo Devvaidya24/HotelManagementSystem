@@ -3,6 +3,7 @@ package HotelBookingSystem;
 import java.sql.*;
 import javax.swing.*;
 import DataBaseConnection.*;
+import com.sun.org.apache.xerces.internal.impl.dv.xs.IDDV;
 
 /**
  * @studentID 19087471
@@ -45,6 +46,7 @@ public class Signup extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
+        clearButton = new javax.swing.JButton();
         signupBackground = new javax.swing.JLabel();
 
         jLabel4.setText("jLabel4");
@@ -137,7 +139,7 @@ public class Signup extends javax.swing.JFrame {
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SystemImages/padlock.png"))); // NOI18N
 
         signUpButton.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        signUpButton.setText("Signup");
+        signUpButton.setText("Submit");
         signUpButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 signUpButtonActionPerformed(evt);
@@ -153,7 +155,7 @@ public class Signup extends javax.swing.JFrame {
         });
 
         loginButton.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        loginButton.setText("Login");
+        loginButton.setText("Back to Login");
         loginButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 loginButtonActionPerformed(evt);
@@ -184,6 +186,13 @@ public class Signup extends javax.swing.JFrame {
         jLabel14.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
         jLabel14.setText("To Login!");
+
+        clearButton.setText("Clear");
+        clearButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clearButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -223,10 +232,13 @@ public class Signup extends javax.swing.JFrame {
                     .addComponent(userName)
                     .addComponent(userEmail)
                     .addComponent(userPassword)
-                    .addComponent(userGender, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(userGender, 0, 300, Short.MAX_VALUE)
                     .addComponent(userEthnicity)
                     .addComponent(userAddress)
-                    .addComponent(forgotPassButton, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(clearButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(18, 18, 18)
+                        .addComponent(forgotPassButton, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(57, 57, 57)
                 .addComponent(jLabel9)
                 .addGap(64, 64, 64))
@@ -279,11 +291,13 @@ public class Signup extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(jLabel14)))
                         .addGap(18, 18, 18)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(signUpButton)
-                            .addComponent(forgotPassButton)
-                            .addComponent(loginButton))))
-                .addContainerGap(64, Short.MAX_VALUE))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(signUpButton)
+                                .addComponent(loginButton)
+                                .addComponent(clearButton))
+                            .addComponent(forgotPassButton))))
+                .addContainerGap(62, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, 910, 430));
@@ -303,7 +317,8 @@ public class Signup extends javax.swing.JFrame {
     }//GEN-LAST:event_ExitActionPerformed
 
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
-        // TODO add your handling code here:
+        setVisible(false);
+        new Login().setVisible(true);
     }//GEN-LAST:event_loginButtonActionPerformed
 
     private void signUpButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signUpButtonActionPerformed
@@ -325,8 +340,17 @@ public class Signup extends javax.swing.JFrame {
     }//GEN-LAST:event_signUpButtonActionPerformed
 
     private void forgotPassButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_forgotPassButtonActionPerformed
-        // TODO add your handling code here:
+        setVisible(false);
+        new ForgotPassword().setVisible(true);
     }//GEN-LAST:event_forgotPassButtonActionPerformed
+
+    private void clearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearButtonActionPerformed
+        userName.setText(null);
+        userEmail.setText(null);
+        userPassword.setText(null);
+        userEthnicity.setText(null);
+        userAddress.setText(null);
+    }//GEN-LAST:event_clearButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -365,6 +389,7 @@ public class Signup extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Exit;
+    private javax.swing.JButton clearButton;
     private javax.swing.JButton forgotPassButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;

@@ -149,10 +149,14 @@
                       <Component id="userName" max="32767" attributes="0"/>
                       <Component id="userEmail" max="32767" attributes="0"/>
                       <Component id="userPassword" alignment="0" max="32767" attributes="0"/>
-                      <Component id="userGender" alignment="0" max="32767" attributes="0"/>
+                      <Component id="userGender" alignment="0" pref="300" max="32767" attributes="0"/>
                       <Component id="userEthnicity" alignment="0" max="32767" attributes="0"/>
                       <Component id="userAddress" alignment="0" max="32767" attributes="0"/>
-                      <Component id="forgotPassButton" alignment="0" min="-2" pref="300" max="-2" attributes="0"/>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="clearButton" max="32767" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="forgotPassButton" min="-2" pref="183" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
                   <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
                   <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
@@ -218,14 +222,17 @@
                               </Group>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="signUpButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="forgotPassButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="loginButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="signUpButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="loginButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="clearButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="forgotPassButton" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
-                  <EmptySpace pref="64" max="32767" attributes="0"/>
+                  <EmptySpace pref="62" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -392,7 +399,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Times New Roman" size="12" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Signup"/>
+            <Property name="text" type="java.lang.String" value="Submit"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="signUpButtonActionPerformed"/>
@@ -414,7 +421,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Times New Roman" size="12" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Login"/>
+            <Property name="text" type="java.lang.String" value="Back to Login"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="loginButtonActionPerformed"/>
@@ -489,6 +496,14 @@
             </Property>
             <Property name="text" type="java.lang.String" value="To Login!"/>
           </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="clearButton">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Clear"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="clearButtonActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

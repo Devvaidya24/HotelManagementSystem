@@ -170,7 +170,7 @@ public class MainPage extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void ExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitActionPerformed
-        int exit = JOptionPane.showConfirmDialog(null, "Would You Like to Close This Program?", "Select", JOptionPane.YES_NO_CANCEL_OPTION);
+        int exit = JOptionPane.showConfirmDialog(null, "Would You Like to Close This Program?", "Select", JOptionPane.YES_NO_OPTION);
         if (exit == 0) {
             System.exit(0);
         }

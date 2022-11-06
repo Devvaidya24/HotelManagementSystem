@@ -2,15 +2,16 @@ package HotelBookingSystem;
 
 import java.sql.*;
 import javax.swing.JOptionPane;
+import DataBaseConnection.*;
 
 /**
  * @studentID 19087471
  * @author Dev Vaidya
  */
 public class Login extends javax.swing.JFrame {
-    
+
     Connection con = null;
-    
+
     public Login() {
         initComponents();
     }
@@ -29,8 +30,8 @@ public class Login extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        userEmail = new javax.swing.JTextField();
+        userPassword = new javax.swing.JPasswordField();
         LoginToDashboard = new javax.swing.JButton();
         signupPage = new javax.swing.JButton();
         forgotPasswordPage = new javax.swing.JButton();
@@ -89,9 +90,9 @@ public class Login extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Password:");
 
-        jTextField1.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        userEmail.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
 
-        jPasswordField1.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        userPassword.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
 
         LoginToDashboard.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         LoginToDashboard.setText("Login");
@@ -136,8 +137,8 @@ public class Login extends javax.swing.JFrame {
                         .addComponent(signupPage, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(forgotPasswordPage, javax.swing.GroupLayout.DEFAULT_SIZE, 139, Short.MAX_VALUE))
-                    .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(userPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(userEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(12, 12, 12)
                 .addComponent(jLabel9)
                 .addGap(23, 23, 23))
@@ -156,10 +157,10 @@ public class Login extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel3)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(userEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(userPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel4))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -180,14 +181,53 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void ExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitActionPerformed
-        int exit = JOptionPane.showConfirmDialog(null, "Would You Like to Close This Program?", "Select", JOptionPane.YES_NO_CANCEL_OPTION);
+        int exit = JOptionPane.showConfirmDialog(null, "Would You Like to Close This Program?", "Select", JOptionPane.YES_NO_OPTION);
         if (exit == 0) {
             System.exit(0);
         }
     }//GEN-LAST:event_ExitActionPerformed
 
     private void LoginToDashboardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginToDashboardActionPerformed
-        // TODO add your handling code here:
+        try {
+            Connection conn = DriverManager.getConnection("jdbc:derby://localhost:1527/HotelBS", "pdc", "pdc");
+            Statement state = conn.createStatement();
+            ResultSet result = state.executeQuery("Select *  from HOTELBOOKINGCUSTOMERS where HOTELBOOKINGCUSTOMERS.EMAILADDRESS='"+userEmail.getText().trim()+"' and HOTELBOOKINGCUSTOMERS.PASSWORD='"+userPassword.getText()+"'");
+            
+            if (result.next()) {
+                JOptionPane.showMessageDialog(this, "Login Successfull");
+                new Dashboard().setVisible(true);
+            } else {
+                JOptionPane.showMessageDialog(this, "Login Failed (Incorrect password or email)");
+            }
+        } catch (Exception e) {
+            System.out.print(e);
+        }
+//        int option = 0;
+//        String email = userEmail.getText();
+//        String password = userPassword.getText();
+//
+//        if (email.isEmpty() || password.isEmpty()) {
+//            option = 1;
+//            JOptionPane.showMessageDialog(null, "Complete Every Field Please...");
+//        } else if (email.equals("pdc") && password.equals("pdc")) {
+//            option = 1;
+//            setVisible(false);
+//            new Dashboard().setVisible(true);
+//        } else {
+//            ResultSet rs = Options.getData("select *from hotelbookingcustomers where emailaddress='" + email + "' and password='" + password + "'");
+//            try {
+//                if (rs.next()) {
+//                    option = 1;
+//                    if(rs.getString(7).equals("true")) {
+//                        setVisible(false);
+//                        new Home().setVisible(true);
+//                    } else JOptionPane.showMessageDialog(null, "Wait for admin approval");
+//                }
+//            } catch (Exception e) {
+//                JOptionPane.showMessageDialog(null, e);
+//            }
+//        }
+//        if (option == 0) JOptionPane.showMessageDialog(null, "Incorrect Email/Password");
     }//GEN-LAST:event_LoginToDashboardActionPerformed
 
     private void signupPageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signupPageActionPerformed
@@ -246,8 +286,8 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private static final javax.swing.JPanel jPanel2 = new javax.swing.JPanel();
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JButton signupPage;
+    private javax.swing.JTextField userEmail;
+    private javax.swing.JPasswordField userPassword;
     // End of variables declaration//GEN-END:variables
 }
