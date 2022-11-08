@@ -19,7 +19,6 @@ public class BookHotelRooms extends javax.swing.JFrame {
         manageRoomB = new javax.swing.JButton();
         checkInB = new javax.swing.JButton();
         checkOutB = new javax.swing.JButton();
-        printBillB = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         Exit = new javax.swing.JButton();
         signOut = new javax.swing.JButton();
@@ -66,17 +65,6 @@ public class BookHotelRooms extends javax.swing.JFrame {
             }
         });
 
-        printBillB.setBackground(new java.awt.Color(255, 255, 255));
-        printBillB.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        printBillB.setForeground(new java.awt.Color(0, 0, 0));
-        printBillB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SystemImages/bill (1).png"))); // NOI18N
-        printBillB.setText("Print Bill");
-        printBillB.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                printBillBActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -86,22 +74,19 @@ public class BookHotelRooms extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(manageRoomB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(checkInB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(checkOutB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(printBillB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(checkOutB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(113, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap(47, Short.MAX_VALUE)
+                .addGap(58, 58, 58)
                 .addComponent(manageRoomB, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(43, 43, 43)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
                 .addComponent(checkInB, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(46, 46, 46)
+                .addGap(67, 67, 67)
                 .addComponent(checkOutB, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(42, 42, 42)
-                .addComponent(printBillB, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(52, 52, 52))
+                .addGap(119, 119, 119))
         );
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 450, 550));
@@ -202,11 +187,6 @@ public class BookHotelRooms extends javax.swing.JFrame {
         new CheckOut().setVisible(true);
     }//GEN-LAST:event_checkOutBActionPerformed
 
-    private void printBillBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_printBillBActionPerformed
-        setVisible(false);
-        new PrintBill().setVisible(true);
-    }//GEN-LAST:event_printBillBActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -253,7 +233,6 @@ public class BookHotelRooms extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private static final javax.swing.JPanel jPanel2 = new javax.swing.JPanel();
     private javax.swing.JButton manageRoomB;
-    private javax.swing.JButton printBillB;
     private javax.swing.JButton signOut;
     // End of variables declaration//GEN-END:variables
 }
