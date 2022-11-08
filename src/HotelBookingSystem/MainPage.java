@@ -6,10 +6,11 @@ import javax.swing.*;
  * @studentID 19087471
  * @author Dev Vaidya
  */
-public class MainPage extends javax.swing.JFrame {
+public class MainPage extends javax.swing.JFrame { //Class for main page that extends to JFRAME
 
+    //Default constructor for main page
     public MainPage() {
-        initComponents();
+        initComponents(); //Calling object to initialize components
     }
 
     @SuppressWarnings("unchecked")
@@ -169,36 +170,38 @@ public class MainPage extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    //Exit action method
     private void ExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitActionPerformed
-        int exit = JOptionPane.showConfirmDialog(null, "Would You Like to Close This Program?", "Select", JOptionPane.YES_NO_OPTION);
-        if (exit == 0) {
-            System.exit(0);
+        //declaring exit for user if they want to exit or not
+        int exit = JOptionPane.showConfirmDialog(this, "Would You Like to Close This Program?", "Select", JOptionPane.YES_NO_OPTION);
+        if (exit == 0) { //If exit is = 0 then
+            System.exit(0); //Exits the program
         }
     }//GEN-LAST:event_ExitActionPerformed
-
+    //Login action button to jump to login page
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
-        setVisible(false);
-        new Login().setVisible(true);
+        setVisible(false); //Closes signup page and
+        new Login().setVisible(true); //Calls and opens login page
     }//GEN-LAST:event_loginButtonActionPerformed
 
+    //Signup button action method
     private void signupButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signupButtonActionPerformed
-        setVisible(false);
-        new Signup().setVisible(true);
+        setVisible(false); //Closes main page and 
+        new Signup().setVisible(true); //Calls and opens the signup page
     }//GEN-LAST:event_signupButtonActionPerformed
 
+    //Booking Button action method
     private void bookingButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bookingButtonActionPerformed
-        setVisible(false);
-        new Login().setVisible(true);
+        setVisible(false); //Closes main page and
+        new Login().setVisible(true); //Calls and opens login page as user needs to first login or create a login
     }//GEN-LAST:event_bookingButtonActionPerformed
 
+    //About us button action methid
     private void aboutContactButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aboutContactButtonActionPerformed
-        setVisible(false);
-        new AboutUsContact().setVisible(true);
+        setVisible(false); //Closes main page and   
+        new AboutUsContact().setVisible(true); //Calls and opens about us page
     }//GEN-LAST:event_aboutContactButtonActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

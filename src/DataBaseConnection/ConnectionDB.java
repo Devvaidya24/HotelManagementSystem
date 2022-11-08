@@ -6,25 +6,30 @@ import java.sql.*;
  *
  * @author Dev Vaidya
  */
-public final class ConnectionDB {
+public class ConnectionDB { //final class for connection databse
 
+    //initializing static final variables such as url of derby, password and username of the database
     private static final String URL = "jdbc:derby:HotelBS;create=true";
     private static final String USER_NAME = "pdc";
     private static final String PASSWORD = "pdc";
 
+    //calling connections object as connection
     Connection conn;
 
+    //constructor for connection class that established the connection
     public ConnectionDB() {
         establishConnection();
     }
 
+    //main class to test
     public static void main(String[] args) {
         ConnectionDB connDB = new ConnectionDB();
         System.out.println(connDB);
     }
 
+    //get connection method to get connection for embedded 
     public static Connection getConnection() {
-        
+
         try {
             Class.forName("org.apache.derby.jdbc.EmbeddedDriver");
             Connection conn = DriverManager.getConnection(URL, USER_NAME, PASSWORD);
@@ -34,6 +39,7 @@ public final class ConnectionDB {
         }
     }
 
+    //establish connection method called earlier which calls user name password and url and allows to authorise
     public void establishConnection() {
         if (this.conn == null) {
             try {
@@ -45,6 +51,7 @@ public final class ConnectionDB {
         }
     }
 
+    //close connection method that closes the connection
     public void closeConnections() {
         if (conn != null) {
             try {
@@ -55,6 +62,7 @@ public final class ConnectionDB {
         }
     }
 
+    //query data base method that stores the three objects and calls statement to result set method using the string sql
     public ResultSet queryDB(String sql) {
         Connection connection = this.conn;
         Statement statement = null;
@@ -69,6 +77,7 @@ public final class ConnectionDB {
         return resultSet;
     }
 
+    //update database method which updates any type of data 
     public void updateDB(String sql) {
         Connection connection = this.conn;
         Statement statement = null;
@@ -81,15 +90,4 @@ public final class ConnectionDB {
             System.out.println(e.getMessage());
         }
     }
-//    public static Connection getConn() throws ClassNotFoundException{
-//        try {
-//            Class.forName("org.apache.derby.jdbc.EmbeddedDriver");
-//            Connection conn = DriverManager.getConnection(URL, USER_NAME, PASSWORD);
-//            System.out.println(URL + "Database Connected!!!");
-//            return conn;
-//        } catch (ClassNotFoundException | SQLException e) {
-//            System.out.println("Database Failed to Connect!!!");
-//            return null;
-//        }
-//    }
 }

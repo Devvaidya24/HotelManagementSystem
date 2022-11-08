@@ -7,7 +7,7 @@ package DataBaseConnection;
 import java.sql.*;
 import javax.swing.*;
 
-public class Options {
+public final class Options {
 
     public static ResultSet getData(String query) {
         Connection conn = null;
